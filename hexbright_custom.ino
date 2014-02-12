@@ -24,8 +24,6 @@
 #define MODE_LOW                1
 #define MODE_MED                2
 #define MODE_HIGH               3
-// #define MODE_BLINKING           4
-// #define MODE_BLINKING_PREVIEW   5
 
 // State
 byte mode = 0;
