@@ -117,7 +117,7 @@ void loop()
   case MODE_LOW:
     if (!btnDown && newBtnDown)
     {
-      if ((time-btnTime) < 2000)
+      if ((time-btnTime) < 1000)
         newMode = MODE_MED;
       else
         newMode = MODE_OFF;
@@ -126,14 +126,14 @@ void loop()
   case MODE_MED:
     if (!btnDown && newBtnDown)
     {
-      if ((time-btnTime) < 2000)
+      if ((time-btnTime) < 1000)
         newMode = MODE_HIGH;
       else
         newMode = MODE_OFF;
     }
     break;
   case MODE_HIGH:
-    if (!btnDown && newBtnDown && (time-btnTime) > 2000)
+//    if (!btnDown && newBtnDown && (time-btnTime) > 2000)
       newMode = MODE_OFF;
     break;
   }
