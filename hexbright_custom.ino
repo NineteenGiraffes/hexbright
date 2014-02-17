@@ -181,7 +181,7 @@ void loop()
   {
     btnTime = time;
     btnDown = newBtnDown;
-    delay(50);
+//    delay(50);
   }
 }
 
