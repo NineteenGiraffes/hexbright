@@ -111,29 +111,35 @@ void loop()
   switch (mode)
   {
   case MODE_OFF:
-    if (!btnDown && newBtnDown)
+    if (btnDown && !newBtnDown && (time-btnTime)>20)
       newMode = MODE_LOW;
+    if (btnDown && newBtnDown && (time-btnTime)>200)
+      newMode = MODE_HIGH;
     break;
   case MODE_LOW:
-    if (!btnDown && newBtnDown)
+    if (btnDown && !newBtnDown && (time-btnTime)>50)
     {
       if ((time-btnTime) < 1000)
         newMode = MODE_MED;
       else
         newMode = MODE_OFF;
     }
+    if (btnDown && newBtnDown && (time-btnTime)>200)
+      newMode = MODE_MED;
     break;
   case MODE_MED:
-    if (!btnDown && newBtnDown)
+    if (btnDown && !newBtnDown && (time-btnTime)>50)
     {
       if ((time-btnTime) < 1000)
         newMode = MODE_HIGH;
       else
         newMode = MODE_OFF;
     }
+    if (btnDown && newBtnDown && (time-btnTime)>200)
+      newMode = MODE_HIGH;
     break;
   case MODE_HIGH:
-    if (!btnDown && newBtnDown)
+    if (btnDown && !newBtnDown && (time-btnTime)>50)
       newMode = MODE_OFF;
     break;
   }
@@ -181,7 +187,7 @@ void loop()
   {
     btnTime = time;
     btnDown = newBtnDown;
-//    delay(50);
+    delay(50);
   }
 }
 
