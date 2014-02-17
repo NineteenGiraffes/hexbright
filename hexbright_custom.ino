@@ -133,7 +133,7 @@ void loop()
     }
     break;
   case MODE_HIGH:
-//    if (!btnDown && newBtnDown && (time-btnTime) > 2000)
+    if (!btnDown && newBtnDown)
       newMode = MODE_OFF;
     break;
   }
